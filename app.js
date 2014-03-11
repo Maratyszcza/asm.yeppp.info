@@ -340,4 +340,6 @@ webServer
 console.log("=======================================");
 console.log("Listening on http://" + os.hostname() + ":" + port + "/");
 console.log("=======================================");
-webServer.listen(port);
+webServer.listen(port, function(){
+    process.setuid("www-data");
+    });
